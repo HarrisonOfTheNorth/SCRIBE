@@ -85,6 +85,35 @@ When `API-IMPLEMENTATION-PROMPT.md` is executed, it generates **`API-CLAUDE.md`*
 
 ---
 
+## Adding New Features
+
+To add a new endpoint to the generated Hello World API, follow the SCRIBE workflow — **do not hand-write code**:
+
+1. Write the endpoint spec in `docs/api/specs/{name}.md`
+2. Update the endpoint index in `docs/api/specs/api-design.md`
+3. Add any new error codes to `docs/api/specs/error-handling.md`
+4. Re-execute `API-IMPLEMENTATION-PROMPT.md` — Claude regenerates the full codebase from all specs
+
+See **[docs/api/guides/adding-endpoints.md](./docs/api/guides/adding-endpoints.md)** for the full checklist, and **[API-SPECULATOR.md Part 3](./API-SPECULATOR.md)** for the canonical workflow.
+
+---
+
+## Refining Existing Features
+
+To change the behaviour of something that already exists — replacing a stub, updating a contract, swapping a hardcoded value for a configurable one — follow the refinement workflow. **Do not hand-write code changes directly.**
+
+1. Identify which spec file(s) describe the current behaviour
+2. Provision any external dependencies first (secrets, environment variables, cloud config) and document their names
+3. Update those spec files to describe the intended final behaviour
+4. Update `docs/api/specs/error-handling.md` if error codes change
+5. Re-execute `API-IMPLEMENTATION-PROMPT.md` — Claude regenerates from the updated specs
+
+> Restoration is not required before refinement. Stubs in generated code are a signal that the corresponding spec is incomplete.
+
+See **[docs/api/guides/refining-features.md](./docs/api/guides/refining-features.md)** for the full checklist, and **[API-SPECULATOR.md Part 4](./API-SPECULATOR.md)** for the canonical workflow.
+
+---
+
 ## Restoration and Iteration
 
 The SCRIBE methodology is **reversible**. To return to specification-only state:

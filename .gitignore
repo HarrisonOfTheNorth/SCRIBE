@@ -420,3 +420,6 @@ FodyWeavers.xsd
 # Local artifacts
 dist/
 coverage/
+
+# Symlinks to parallel projects (session-scoped, not committed)
+production/CNFAPI

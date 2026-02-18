@@ -56,7 +56,74 @@ The output will include:
 
 ---
 
-## Part 3: Answer the Questionnaire
+## Part 3: Adding New Features
+
+Once the specification package exists and code has been generated, use this workflow to add new endpoints to your project under SCRIBE doctrine. **Do not hand-write code.** Re-execute the implementation prompt instead.
+
+### Step 1: Write the Endpoint Specification
+
+Create `docs/api/specs/{path-slug}-endpoint.md` following the pattern of your existing endpoint specs:
+- Path, method, auth requirement
+- Request body (JSON structure with example)
+- Success response (HTTP status + JSON structure)
+- All error responses (HTTP status + error codes)
+- Implementation notes
+
+### Step 2: Update the Endpoint Index
+
+Add the new path to `docs/api/specs/api-design.md` endpoint table.
+
+### Step 3: Add Error Codes (if new)
+
+Add any new error codes to `docs/api/specs/error-handling.md`.
+
+### Step 4: Execute the Implementation Prompt
+
+Run `API-IMPLEMENTATION-PROMPT.md` as a Claude Code prompt. It will read all spec files and generate the updated codebase — source code, tests, and guides — from scratch.
+
+---
+
+## Part 4: Refining Existing Features
+
+Once code has been generated, use this workflow when you need to **change the behaviour of something that already exists** — updating a stub to real implementation, changing a response contract, replacing a hardcoded value with a configurable one, or evolving a design decision.
+
+The key distinction from Part 3:
+- **Adding** = new spec file, new endpoint, new code that doesn't exist yet
+- **Refining** = existing spec file changes, existing code changes with it
+
+**Do not hand-write code changes directly.** Update the spec, then re-execute the implementation prompt.
+
+### Step 1: Identify the Affected Spec File(s)
+
+Find the spec file(s) that currently describe the behaviour you want to change. Common candidates:
+- `docs/api/specs/{feature}-endpoint.md` — if the request/response contract changes
+- `docs/api/specs/technology-choices.md` — if a library, SDK, or platform mechanism changes
+- `docs/api/specs/error-handling.md` — if error codes or HTTP statuses change
+- `docs/api/specs/api-design.md` — if a cross-cutting design principle changes
+
+> **Stubs in generated code are a signal that the corresponding spec is incomplete.** Refinement = completing the spec, then regenerating.
+
+### Step 2: Provision Any External Dependencies First
+
+If the refinement requires external resources that must exist before the code can work — secrets, environment variables, cloud configuration, third-party credentials — **provision those first**, outside the SCRIBE cycle. Then document the variable names, key names, or configuration references in the spec so Claude knows exactly what to reference in the generated code.
+
+### Step 3: Update the Spec File(s)
+
+Edit the identified spec files to describe the **intended final behaviour** — not the stub, not the interim state. Be specific: name the environment variables, SDK classes, configuration keys, or service patterns the implementation should use.
+
+### Step 4: Update Error Codes (if changed)
+
+If the refinement introduces new error conditions or changes existing ones, update `docs/api/specs/error-handling.md`.
+
+### Step 5: Execute the Implementation Prompt
+
+Run `API-IMPLEMENTATION-PROMPT.md` as a Claude Code prompt. It reads all spec files — including your updated ones — and regenerates the complete codebase from scratch.
+
+> **Note**: Restoration is not required before refinement. The implementation prompt always regenerates from specs. Restoration is only needed if you want to review specs in isolation before regenerating.
+
+---
+
+## Part 5: Answer the Questionnaire
 
 Answer these questions to help generate your project-specific specifications:
 
@@ -140,7 +207,7 @@ Answer these questions to help generate your project-specific specifications:
 
 ---
 
-## Part 4: File Templates
+## Part 6: File Templates
 
 Here's what each generated file should contain (for reference):
 
@@ -342,7 +409,7 @@ Accepted
 
 ---
 
-## Part 5: API Speculator Generation Instructions
+## Part 7: API Speculator Generation Instructions
 
 When you have answers to the questionnaire, the API Speculator will:
 
@@ -368,7 +435,7 @@ When you have answers to the questionnaire, the API Speculator will:
 
 ---
 
-## Part 6: Describe Your Project
+## Part 8: Describe Your Project
 
 **Now it's your turn**. Fill in the following sections with your project details:
 
