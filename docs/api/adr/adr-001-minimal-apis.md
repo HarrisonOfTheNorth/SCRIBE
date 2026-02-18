@@ -52,8 +52,8 @@ Key constraints:
 
 ### Mitigation Strategies
 - **For Large Projects**: Organize handlers into feature folders (`/src/Features/{Feature}/`)
-- **For Consistency**: Follow established patterns documented in [Adding Endpoints Guide](../../guides/adding-endpoints.md)
-- **For Clarity**: Maintain comprehensive API documentation in `/docs/specs/`
+- **For Consistency**: Follow established patterns documented in [Adding Endpoints Guide](../../api/guides/adding-endpoints.md)
+- **For Clarity**: Maintain comprehensive API documentation in `/docs/api/specs/`
 
 ## Alternatives Considered
 
@@ -176,8 +176,8 @@ public static void MapHelloEndpoints(this WebApplication app)
 
 ## Related Decisions
 
-- [Technology Choices Specification](../specs/technology-choices.md) — Complete technology stack
-- [API Design Specification](../specs/api-design.md) — API design principles
+- [Technology Choices Specification](../api/specs/technology-choices.md) — Complete technology stack
+- [API Design Specification](../api/specs/api-design.md) — API design principles
 
 ## Decision Log
 

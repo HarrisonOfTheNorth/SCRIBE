@@ -21,7 +21,7 @@ This specification-first approach ensures clarity, consistency, and maintains ex
 
 ### Step 1: Create Endpoint Specification
 
-Create a new file in `/docs/specs/{endpoint-name}.md`:
+Create a new file in `/docs/api/specs/{endpoint-name}.md`:
 
 **File Naming**:
 - Use lowercase with hyphens: `user-login.md`, `item-search.md`
@@ -127,7 +127,7 @@ Describe how the endpoint should be implemented (patterns to follow, special con
 
 **Example: Adding a GET /users/{id} endpoint**
 
-Create `/docs/specs/get-user.md`:
+Create `/docs/api/specs/get-user.md`:
 ```markdown
 # Get User Endpoint Specification
 
@@ -213,7 +213,7 @@ curl -X GET http://localhost:5000/users/123 \
 
 ### Step 2: Update API Design Index
 
-Edit `/docs/specs/api-design.md` and add the new endpoint to the **Endpoint Index** table:
+Edit `/docs/api/specs/api-design.md` and add the new endpoint to the **Endpoint Index** table:
 
 Before:
 ```markdown
@@ -445,7 +445,7 @@ If the endpoint requires special setup, deployment, or configuration:
 
 ## File Naming Conventions
 
-### Specification Files (in `/docs/specs/`)
+### Specification Files (in `/docs/api/specs/`)
 - **Naming**: lowercase with hyphens: `get-user.md`, `user-login.md`, `item-search.md`
 - **Pattern**: `{http-method}-{resource-name}.md` or `{feature-name}.md`
 - **Rationale**: Predictable naming makes files easy to find
@@ -464,7 +464,7 @@ If the endpoint requires special setup, deployment, or configuration:
 
 ## Checklist for Adding a New Endpoint
 
-- [ ] Specification written in `/docs/specs/{endpoint-name}.md`
+- [ ] Specification written in `/docs/api/specs/{endpoint-name}.md`
 - [ ] Request contract documented (method, path, headers, body)
 - [ ] Response contract documented (200 and error responses)
 - [ ] Examples provided (curl command and JSON)
@@ -482,6 +482,6 @@ If the endpoint requires special setup, deployment, or configuration:
 ## Related Documentation
 
 - [CLAUDE.md](../../CLAUDE.md) — Coding standards and conventions
-- [API Design](../specs/api-design.md) — API design principles
-- [Error Handling](../specs/error-handling.md) — Error response format
-- [Technology Choices](../specs/technology-choices.md) — Framework and platform decisions
+- [API Design](../api/specs/api-design.md) — API design principles
+- [Error Handling](../api/specs/error-handling.md) — Error response format
+- [Technology Choices](../api/specs/technology-choices.md) — Framework and platform decisions

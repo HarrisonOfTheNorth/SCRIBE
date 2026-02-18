@@ -96,13 +96,13 @@ See `CLAUDE.md` for detailed development workflow and coding standards.
 All project specifications are documented in markdown for clarity and AI comprehension:
 
 - **[CLAUDE.md](./CLAUDE.md)** — Agent guidance for development workflow
-- **[API Design](./docs/specs/api-design.md)** — API principles and endpoint index
-- **[Hello Endpoint Spec](./docs/specs/hello-endpoint.md)** — Complete POST /test/hello contract
-- **[Error Handling](./docs/specs/error-handling.md)** — Error response format and codes
-- **[Technology Choices](./docs/specs/technology-choices.md)** — Why ASP.NET Core, .NET 8, xUnit
-- **[Getting Started Guide](./docs/guides/getting-started.md)** — Detailed setup instructions
-- **[Adding Endpoints Guide](./docs/guides/adding-endpoints.md)** — Workflow for new features
-- **[Architecture Decisions](./docs/adr/adr-001-minimal-apis.md)** — Why Minimal APIs
+- **[API Design](./docs/api/specs/api-design.md)** — API principles and endpoint index
+- **[Hello Endpoint Spec](./docs/api/specs/hello-endpoint.md)** — Complete POST /test/hello contract
+- **[Error Handling](./docs/api/specs/error-handling.md)** — Error response format and codes
+- **[Technology Choices](./docs/api/specs/technology-choices.md)** — Why ASP.NET Core, .NET 8, xUnit
+- **[Getting Started Guide](./docs/api/guides/getting-started.md)** — Detailed setup instructions
+- **[Adding Endpoints Guide](./docs/api/guides/adding-endpoints.md)** — Workflow for new features
+- **[Architecture Decisions](./docs/api/adr/adr-001-minimal-apis.md)** — Why Minimal APIs
 
 ## Running Tests
 
@@ -125,8 +125,8 @@ dotnet test --verbosity normal
 
 Development follows specification-first methodology:
 
-1. Create specification in `/docs/specs/` before implementation
-2. Reference spec in `/docs/specs/api-design.md` endpoint index
+1. Create specification in `/docs/api/specs/` before implementation
+2. Reference spec in `/docs/api/specs/api-design.md` endpoint index
 3. Implement feature in `/src` following patterns in existing code
 4. Write tests in `/tests` using xUnit patterns
 5. See [CLAUDE.md](./CLAUDE.md) for detailed workflow
@@ -137,4 +137,4 @@ This is a demonstration project. Use as needed for learning and development.
 
 ## Support
 
-For detailed development guidance, see [CLAUDE.md](./CLAUDE.md). For questions about API contracts, see the relevant specification file in `/docs/specs/`.
+For detailed development guidance, see [CLAUDE.md](./CLAUDE.md). For questions about API contracts, see the relevant specification file in `/docs/api/specs/`.

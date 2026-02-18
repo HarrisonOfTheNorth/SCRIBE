@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="../src/HelloWorldApi.csproj" />
+    <ProjectReference Include="../../src/api/HelloWorldApi.csproj" />
   </ItemGroup>
 
 </Project>

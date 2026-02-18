@@ -292,7 +292,7 @@ Check that the response:
 
 ### Endpoint Specification
 
-For complete details about the endpoint, see [Hello Endpoint Specification](../specs/hello-endpoint.md)
+For complete details about the endpoint, see [Hello Endpoint Specification](../api/specs/hello-endpoint.md)
 
 ---
 
@@ -459,9 +459,9 @@ If tests fail:
 
 ### 1. Read the API Specifications
 
-- [API Design Principles](../specs/api-design.md) — How the API is designed
-- [Hello Endpoint Specification](../specs/hello-endpoint.md) — Details about the /test/hello endpoint
-- [Error Handling](../specs/error-handling.md) — How errors are handled
+- [API Design Principles](../api/specs/api-design.md) — How the API is designed
+- [Hello Endpoint Specification](../api/specs/hello-endpoint.md) — Details about the /test/hello endpoint
+- [Error Handling](../api/specs/error-handling.md) — How errors are handled
 
 ### 2. Make Modifications
 
@@ -490,11 +490,11 @@ http://localhost:5000/swagger/index.html
 
 ### 5. Explore Architecture Decisions
 
-- [ADR-001: Minimal APIs](../adr/adr-001-minimal-apis.md) — Why we chose Minimal APIs
+- [ADR-001: Minimal APIs](../api/adr/adr-001-minimal-apis.md) — Why we chose Minimal APIs
 
 ### 6. Learn More
 
-- [Technology Choices Specification](../specs/technology-choices.md) — Framework and platform decisions
+- [Technology Choices Specification](../api/specs/technology-choices.md) — Framework and platform decisions
 - [CLAUDE.md](../../CLAUDE.md) — Coding standards and conventions
 
 ---
@@ -530,10 +530,10 @@ dotnet test --verbosity normal
 
 For detailed documentation, see:
 - Project documentation: `/docs/`
-- API specifications: `/docs/specs/`
-- Architecture decisions: `/docs/adr/`
-- Implementation guides: `/docs/guides/`
+- API specifications: `/docs/api/specs/`
+- Architecture decisions: `/docs/api/adr/`
+- Implementation guides: `/docs/api/guides/`
 
 ---
 
-**You're all set!** The API should now be running and responding to requests. Start with the [Hello Endpoint Specification](../specs/hello-endpoint.md) to understand the API better.
+**You're all set!** The API should now be running and responding to requests. Start with the [Hello Endpoint Specification](../api/specs/hello-endpoint.md) to understand the API better.
