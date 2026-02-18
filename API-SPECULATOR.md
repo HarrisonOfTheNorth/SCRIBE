@@ -4,7 +4,7 @@
 
 The **API Speculator** is a technology-specific specification generator (a Speculator) that generates a complete, specification-first documentation package for REST APIs, following the same industry-standard AGENTS.md/CLAUDE.md patterns as the Hello World API example.
 
-**What you'll get**: A ready-to-implement specification package (markdown files only, no code) that you can then use with your project's implementation prompt (i.e., API-SPECULATOR.md) to generate working code.
+**What you'll get**: A ready-to-implement specification package (markdown files only, no code) that you can then use with your project's implementation prompt (i.e., [IMPLEMENTATION-PROMPT.md](./IMPLEMENTATION-PROMPT.md)) to generate working code.
 
 **The cycle**: Describe your API → Generate specifications → Implement with code → Restore to specification state (repeat as needed)
 
@@ -361,8 +361,10 @@ When you have answers to the questionnaire, the API Speculator will:
    - adding-features.md (your API's workflow)
 6. **Generate /docs/adr/** files:
    - adr-001-[decision].md (your first architecture decision)
-7. **Generate API-SPECULATOR.md**: 4-part system adapted to your API project
+7. **Generate IMPLEMENTATION-PROMPT.md**: 4-part code generation system adapted to your API project
 8. **Verify**: Check all files cross-reference correctly, naming conventions, abstraction level
+
+**Note — API-CLAUDE.md**: `API-CLAUDE.md` is NOT generated during this specification phase. It is generated as the final output of `IMPLEMENTATION-PROMPT.md`, after all source code has been compiled and tested. It contains Claude Code agent guidance specific to the generated project (build commands, coding standards, endpoint workflows, gotchas, links to `/docs/`). Its content will mirror the CLAUDE.md template above, but populated with the actual project details.
 
 ---
 
@@ -464,7 +466,7 @@ Before submitting, verify:
 2. The API Speculator will generate your complete specification package
 3. You'll receive 11+ markdown specification files
 4. You can review, refine, and ask questions about the specs
-5. When ready, run the API-SPECULATOR.md to generate your working code
+5. When ready, run [IMPLEMENTATION-PROMPT.md](./IMPLEMENTATION-PROMPT.md) to generate your working code and the `API-CLAUDE.md` agent guidance file
 6. Run restoration-prompt.md anytime to clean generated code and return to specs-only state
 
 ---
@@ -475,9 +477,10 @@ After submission, you'll have a directory structure like:
 
 ```
 your-project-name/
-├── CLAUDE.md                           # Agent guidance
+├── CLAUDE.md                           # Repository/methodology agent guidance
 ├── README.md                           # Human quick start
-├── IMPLEMENTATION-PROMPT.md            # 4-part code generator
+├── IMPLEMENTATION-PROMPT.md            # 4-part code generator (execute to generate code)
+├── API-CLAUDE.md                       # Generated: project-specific agent guidance (created by IMPLEMENTATION-PROMPT.md)
 └── docs/
     ├── specs/
     │   ├── [first-feature].md         # Your first feature spec
