@@ -35,7 +35,7 @@ After the API is implemented and all tests pass:
 
 The generated guide should follow the structure and principles in the design spec, but with actual content specific to this project.
 
-## Part 4: Create Restoration Prompt (Final Step)
+## Part 4: Create Restoration Prompt
 
 After getting-started.md is generated:
 
@@ -43,12 +43,32 @@ After getting-started.md is generated:
 2. Generate `/restoration-prompt.md` with:
    - Clear purpose: reversing the implementation to pre-implementation state
    - Verification steps to confirm all specification files remain
-   - Safe deletion commands for all generated artifacts (/src, /tests, global.json, hello-world-api.sln, .gitignore, docs/guides/getting-started.md)
+   - Safe deletion commands for all generated artifacts (/src, /tests, global.json, hello-world-api.sln, .gitignore, docs/guides/getting-started.md, API-CLAUDE.md)
    - Confirmation that all generated files are removed
    - Post-restoration verification checklist
    - **CRITICAL**: Self-deletion instruction as final step (remove restoration-prompt.md itself)
 
 The generated restoration prompt allows users to cleanly remove all generated project artifacts and return the package to its pre-implementation state, ready for another implementation run. It deletes itself as the final step to complete the restoration cycle.
+
+## Part 5: Generate API-CLAUDE.md (Final Step)
+
+After restoration-prompt.md is generated and all code has been compiled and tested successfully:
+
+1. Generate `/API-CLAUDE.md` — the Claude Code agent guidance file specific to this generated project
+2. This file is the implementation-scoped equivalent of the repository-level `CLAUDE.md`
+3. It must contain:
+   - **Project Overview**: What the generated project is, why it exists, tech stack, and current phase scope
+   - **Getting Started for Claude**: Quick context on the spec-first approach, all key terminal commands (build, run, test), configuration files, and links to documentation
+   - **Coding Standards**: Language/framework-specific conventions, testing patterns, error handling rules, and git workflow
+   - **Key Workflow**: Step-by-step process for adding new endpoints/features, adapted to this project's technology
+   - **Important Gotchas**: Platform-specific notes, framework-specific issues, and any project-specific constraints discovered during implementation
+   - **Links to Detailed Documentation**: All `/docs/specs/`, `/docs/guides/`, and `/docs/adr/` files with descriptions
+   - **Document Metadata**: Version, date, audience, and cross-reference to `CLAUDE.md` (the methodology-level guidance)
+
+4. The content must be populated with **actual, project-specific details** — real build commands, real test commands, real endpoint names, real file paths — not generic templates
+5. The audience is a Claude Code agent that will work on this project in future sessions; it should be able to read `API-CLAUDE.md` and immediately understand how to build, test, and extend the project correctly
+
+**Note**: `API-CLAUDE.md` is a generated artefact. It will be removed by `restoration-prompt.md` if the project is restored to specification-only state, and regenerated when `IMPLEMENTATION-PROMPT.md` is executed again.
 
 ---
 

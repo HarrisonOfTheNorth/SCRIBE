@@ -163,7 +163,7 @@ After a Speculator is executed and specifications are generated and refined, you
 
 **Duration**: 15-30 minutes for generation
 
-**Note**: Additional outputs (getting-started.md, restoration-prompt.md) are generated as part of IMPLEMENTATION-PROMPT.md's 4-part system, not separate phases.
+**Note**: Additional outputs (getting-started.md, restoration-prompt.md, API-CLAUDE.md) are generated as part of IMPLEMENTATION-PROMPT.md's 5-part system, not separate phases.
 
 ---
 
