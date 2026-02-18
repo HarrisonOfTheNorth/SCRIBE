@@ -65,7 +65,7 @@ After a Speculator is executed and specifications are generated and refined, you
 
 **What**: The AI asks structured questions to discover and clarify all project requirements needed to define the specification.
 
-**How**: TECHNICAL-SPECIFICATION-SPECULATOR.md (e.g., [API-SPECULATOR-EXAMPLE-CODE-OUTPUT.md](./API-SPECULATOR-EXAMPLE-CODE-OUTPUT.md)) runs and systematically questions the developer:
+**How**: TECHNICAL-SPECIFICATION-SPECULATOR.md (e.g., [API-SPECULATOR.md](./API-SPECULATOR.md)) runs and systematically questions the developer:
 1. AI asks targeted questions organized into 5-7 categories:
    - Project Basics (name, purpose, vision, problem solved)
    - Technology Decisions (language, framework, testing framework)
@@ -274,7 +274,7 @@ The SCRIBE methodology begins with selecting the right technology-specific Specu
 **Goal**: AI exhaustively questions the developer to capture all requirements needed for the specification
 
 **What Happens**:
-1. Developer executes the selected Speculator (e.g., TECHNICAL-SPECIFICATION-SPECULATOR.md (e.g., [API-SPECULATOR-EXAMPLE-CODE-OUTPUT.md](./API-SPECULATOR-EXAMPLE-CODE-OUTPUT.md)) for API Speculator)
+1. Developer executes the selected Speculator (e.g., TECHNICAL-SPECIFICATION-SPECULATOR.md (e.g., [API-SPECULATOR.md](./API-SPECULATOR.md)) for API Speculator)
 2. AI systematically asks structured questions across 5-7 categories:
    - Project Basics (name, purpose, problem it solves)
    - Technology Decisions (language, framework, testing framework)
@@ -611,7 +611,7 @@ SCRIBE is not a new theoretical framework—it's a synthesis of five proven indu
 
 **What**: Prompts that generate other prompts, enabling self-scaling systems.
 
-**How SCRIBE Uses It**: TECHNICAL-SPECIFICATION-SPECULATOR.md (e.g., [API-SPECULATOR-EXAMPLE-CODE-OUTPUT.md](./API-SPECULATOR-EXAMPLE-CODE-OUTPUT.md)) is a meta-prompt that generates specification packages. The specification generator itself can be customized or regenerated for different domains.
+**How SCRIBE Uses It**: TECHNICAL-SPECIFICATION-SPECULATOR.md (e.g., [API-SPECULATOR.md](./API-SPECULATOR.md)) is a meta-prompt that generates specification packages. The specification generator itself can be customized or regenerated for different domains.
 
 **Reference**: Meta Prompting arxiv papers, Prompt Engineering guides
 
